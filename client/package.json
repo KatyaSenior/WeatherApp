@@ -8,9 +8,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "vite": "^5.2.8"
   },
-  "type": "module"
+  "type": "module",
+  "description": ""
 }
