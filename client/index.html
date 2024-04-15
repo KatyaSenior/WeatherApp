@@ -5,13 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script src="app.js" defer></script>
-    <title>Document</title>
+    <title>Weather App</title>
   </head>
   <body>
-    <p>Hello world</p>
+    <header>
+      <h1 id="location">London</h1>
+      <p id="date"></p>
+      <button>Change Location</button>
+    </header>
 
-
-    <p>Testing, testing, 123.</p>
-
+    <main>
+      <div id="weather-container">
+        <span id="weather-icon">
+          <img src="./assets/cloudy (1).png" alt="" />
+        </span>
+        <p id="temperature">29 degrees</p>
+        <p id="weather-description">Sunny day</p>
+      </div>
+      <section>
+        <!-- make display: inline-block -->
+        <div id="wind">
+          <p>18km/h</p>
+          <p>Wind</p>
+        </div>
+        <div id="pressure">
+          <p>1014 mbar</p>
+          <p>Pressure</p>
+        </div>
+        <div id="humidity">
+          <p>32%</p>
+          <p>Humidity</p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>Created by...</p>
+    </footer>
   </body>
 </html>
