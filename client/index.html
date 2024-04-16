@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./client/style.css" />
     <script src="app.js" defer type="module"></script>
     <title>Weather App</title>
   </head>
@@ -18,16 +18,16 @@
     <!-- Key section below -->
     <main>
       <div id="weather-container">
+        <p id="temperature">29°</p>
         <span id="weather-icon">
-          <p id="temperature">29 degrees</p>
           <img src="./assets/cloudy (1).png" alt="" />
         </span>
         <p id="weather-description">Sunny day</p>
       </div>
-      <section>
-        <!-- make display: inline-block -->
+      <!-- <section> -->
+      <!-- make display: inline-block -->
 
-        <!-- Possible stretch goal content
+      <!-- Possible stretch goal content
           
           <div id="wind">
           <p>18km/h</p>
@@ -41,10 +41,13 @@
           <p>32%</p>
           <p>Humidity</p>
         </div> -->
-      </section>
+      <!-- </section> -->
     </main>
+    <section id="comment-section">
+      <span id="user-comments">Past user comments here</span>
+    </section>
     <footer>
-      <span id="user-comments">User comment here</span>
+      <button id="user-submit">submit a comment</button>
     </footer>
   </body>
 </html>

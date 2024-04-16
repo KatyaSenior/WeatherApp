@@ -1,0 +1,50 @@
+body {
+  font-size: 16px;
+  font-family: monospace;
+}
+
+header {
+  display: block;
+  font-size: 2rem;
+  text-align: center;
+  background-color: red;
+  margin: 10px;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+main {
+  font-size: 4rem;
+}
+
+#weather-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#weather-icon > img {
+  max-height: 200px;
+}
+
+#weather-description {
+  font-size: 1.5rem;
+}
+
+#comment-section {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 2rem;
+  background-color: blue;
+  margin: 10px;
+  border-radius: 10px;
+  padding: 50px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+}
