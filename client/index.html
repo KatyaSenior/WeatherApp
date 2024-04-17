@@ -3,24 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
-    <script src="app.js" defer type="module"></script>
+    <link rel="stylesheet" href="/client/style.css" />
+    <script src="./app.js" defer type="module"></script>
     <title>Weather App</title>
   </head>
   <body>
     <header>
+      
       <h1 id="location">London</h1>
-      <p id="date"></p>
+      <p id="date-time"></p>
       <!-- 
         When we add more locations, work on this.
-        <button>Change Location</button> -->
+        <button>Change Location</button> 
+      <select name="locations" id="locations">
+        <option value="select">Select Location</option>
+        <option value="London">London</option>
+        <option value="Berlin">Berlin</option>
+        <option value="Tokyo">Tokyo</option>
+        <option value="New York">New York</option>
+        <option value="Paris">Paris</option>
+      </select>-->
     </header>
     <!-- Key section below -->
     <main>
       <div id="weather-container">
         <p id="temperature">0</p>
         <span id="weather-icon">
-          <img src="./assets/cloudy (1).png" alt="" />
+          <img src="./assets/cloudy (1).png" alt="weather icon" />
+          
         </span>
         <p id="weather-description">Sunny day</p>
       </div>
