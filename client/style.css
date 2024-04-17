@@ -17,6 +17,7 @@ main {
   font-size: 4rem;
 }
 
+form,
 #weather-container {
   display: flex;
   width: 100%;
@@ -35,19 +36,24 @@ main {
 
 #comment-section {
   display: flex;
-  justify-content: center;
-  text-align: center;
-  font-size: 2rem;
-  background-color: blue;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* text-align: center; */
+  font-size: 0.5rem;
+  /* background-color: blue; */
   margin: 10px;
   border-radius: 10px;
   padding: 50px;
+  width: 40vw;
+  height: 20vh;
+  overflow: auto;
+  border: 1px solid black;
 }
 
 footer {
   display: flex;
   justify-content: center;
 }
-#form-location {
+/* #form-location {
   visibility: hidden;
-}
+} */

@@ -7,25 +7,30 @@ const location = document.getElementById("location");
 const form = document.getElementById("comments-form");
 const comment = document.getElementById("comment");
 const formLocation = document.getElementById("form-location");
-const commentButton = document.getElementById("user-submit");
-const commentBox = document.getElementById("user-comments");
+const commentButton = document.getElementById("comment-submit");
+const commentBox = document.getElementById("comment-section");
 
 async function commentsHandler(event) {
   event.preventDefault();
   const username = event.target.username.value;
+  const location = event.target.location.value;
   const comment = event.target.comment.value;
   const response = await fetch("http://localhost:8080/comments", {
     method: "POST",
-    body: JSON.stringify({ username: username, comment: comment }),
+    body: JSON.stringify({
+      username: username,
+      location: location,
+      comment: comment,
+    }),
     headers: {
       "Content-Type": "application/json",
     },
   });
   console.log(await response.json());
-  fetchcomments();
+  fetchComments();
   form.reset();
 }
-async function fetchcomments() {
+async function fetchComments() {
   const response = await fetch("http://localhost:8080/comments");
   const comments = await response.json();
   console.log(comments);
@@ -33,16 +38,19 @@ async function fetchcomments() {
 
   comments.forEach((comment) => {
     const h2 = document.createElement("h2");
+    const h3 = document.createElement("h3");
     const p = document.createElement("p");
-    h2.textContent = username.username;
+    h2.textContent = comment.username;
+    h3.textContent = comment.location;
     p.textContent = comment.comment;
     commentBox.appendChild(h2);
+    commentBox.appendChild(h3);
     commentBox.appendChild(p);
   });
 }
 
-commentBox.addEventListener("submit", commentsHandler);
-fetchcomments();
+form.addEventListener("submit", commentsHandler);
+fetchComments();
 
 // dateTime.textContent = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
@@ -83,7 +91,7 @@ async function userLocationAndTemp() {
   } else {
     console.log("Geolocation is not supported!");
   }
-  showCity(position);
+  // showCity(position);
 
   async function showCity(position) {
     const latitude = position.coords.latitude;
