@@ -14,14 +14,14 @@
 
       <!-- When we add more locations, work on this.
         <button>Change Location</button>  -->
-      <!-- <select name="locations" id="locations">
+      <select name="locations" id="locations">
         <option value="select">Select Location</option>
         <option value="London">London</option>
         <option value="Berlin">Berlin</option>
         <option value="Tokyo">Tokyo</option>
         <option value="New York">New York</option>
         <option value="Paris">Paris</option>
-      </select> -->
+      </select>
     </header>
     <!-- Key section below -->
     <main>
@@ -31,6 +31,9 @@
           <img src="./assets/cloudy (1).png" alt="weather icon" />
         </span>
         <p id="weather-description">Sunny day</p>
+        <section id="comment-section">
+          <span id="user-comments">Past user comments here</span>
+        </section>
       </div>
       <!-- <section> -->
       <!-- make display: inline-block -->
@@ -51,23 +54,11 @@
         </div> -->
       <!-- </section> -->
     </main>
-    <section id="comment-section">
-      <span id="user-comments">Past user comments here</span>
-    </section>
-    <form id="comments-form">
-      <label for="username">Your Name:</label>
-      <input type="text" id="username" name="username" required />
-      <label for="form-location">Location:</label>
-      <input type="text" id="form-location" name="location" />
-      <label for="comment">Comments:</label>
-      <textarea id="comment" name="comment" rows="4" required></textarea>
-      <button type="submit" id="comment-submit">Submit</button>
-      <p><a href="./client/index.html">Home</a></p>
-    </form>
+
     <footer>
       <p>
         write a comment
-        <a href="./form/">here</a>
+        <a href="./client/form/">here</a>
       </p>
     </footer>
   </body>
