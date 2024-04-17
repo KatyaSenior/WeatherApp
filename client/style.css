@@ -48,6 +48,6 @@ footer {
   display: flex;
   justify-content: center;
 }
-#form-location{
-  visibility:hidden;
+#form-location {
+  visibility: hidden;
 }
