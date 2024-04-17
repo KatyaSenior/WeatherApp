@@ -4,6 +4,40 @@ const dateTime = document.getElementById("date-time");
 const icon = document.getElementById("weather-icon");
 const selectLocations = document.getElementById("locations");
 const location = document.getElementById("location");
+const form =document.getElementById("comments-form");
+const comment =document.getElementById("comment");
+const formLocation = document.getElementById("form-location");
+const commentButton = document.getElementById("user-submit");
+
+
+async function commentsHandler(event){
+    event.preventDefault();
+    const username = event.target.username.value;
+    const comment =event.target.comment.value;
+    const response = await fetch("http://localhost:8080/comments", {
+        method: "POST",
+        body: JSON.stringify({ username:username, comment:comment }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      fetchcomments();
+
+}
+async function fetchcomments(){
+    const response = await fetch("http://localhost:8080/comments");
+    const comments = await response.json();
+    console.log(comments);
+    const h2 =document.createElement("h2");
+    const p = document.createElement("p");
+    h2.textContent=username.username;
+    p.textContent=comment.comment;
+    form .appendChild(h1)
+ 
+
+   
+}
+
 
 // dateTime.textContent = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
