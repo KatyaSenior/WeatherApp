@@ -27,7 +27,7 @@ message TEXT
   ];
 
   const insertToDB = db.prepare(
-    "INSERT INTO comments (username, location, message) VALUES(?,?,?)"
+    "INSERT INTO comments (username, location, message) VALUES(?,?, ?)"
   );
 
   locations.forEach(({ username, location, message }) => {
