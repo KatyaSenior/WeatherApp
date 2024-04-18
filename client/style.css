@@ -50,8 +50,13 @@ main {
   border-radius: 10px;
   padding: 50px;
   width: 40vw;
+
   max-height: 30vh;
   overflow: auto;
+=======
+  height: 20vh;
+  overflow: scroll;
+
   border: 1px solid black;
 }
 
