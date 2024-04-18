@@ -30,8 +30,6 @@ label {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  
-
 }
 
 #comments-form {
@@ -105,23 +103,19 @@ footer {
   background-image: url(./assets/daySunny.jpg);
 }
 
-.nightSunBG {
-}
-
-.dayRainBG {
-}
-
-.nightRainBG {
-}
-
-.daySnowBG {
-}
-
-.nightSnowBG {
-}
-
-.dayCloudBG {
-}
-
-.nightCloudBG {
+@media (min-width: 800px) {
+  main {
+    font-size: 5rem;
+  }
+  img {
+    overflow: hidden;
+    object-fit: cover;
+  }
+  #form-section {
+    position: absolute;
+    top: 60vh;
+    height: 15vh;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
 }
