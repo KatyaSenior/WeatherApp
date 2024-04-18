@@ -5,7 +5,7 @@ const icon = document.getElementById("weather-icon");
 const selectLocations = document.getElementById("locations");
 const location = document.getElementById("location");
 const form = document.getElementById("comments-form");
-const comment = document.getElementById("comment");
+// const comment = document.getElementById("comment");
 const formLocation = document.getElementById("form-location");
 const commentButton = document.getElementById("comment-submit");
 const commentBox = document.getElementById("comment-section");
@@ -20,7 +20,7 @@ async function commentsHandler(event) {
     body: JSON.stringify({
       username: username,
       location: location,
-      comment: comment,
+      message: comment,
     }),
     headers: {
       "Content-Type": "application/json",
@@ -41,8 +41,11 @@ async function fetchComments() {
     const h3 = document.createElement("h3");
     const p = document.createElement("p");
     h2.textContent = comment.username;
+    console.log(h2.textContent);
     h3.textContent = comment.location;
-    p.textContent = comment.comment;
+    console.log(h3.textContent);
+    p.textContent = comment.message;
+    console.log(p.textContent);
     commentBox.appendChild(h2);
     commentBox.appendChild(h3);
     commentBox.appendChild(p);
