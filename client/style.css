@@ -88,5 +88,30 @@ footer {
 #home-button {
   position: absolute;
   bottom: 10vh;
+  left: 25vh;
   max-width: 10vh;
+}
+
+.daySunBG {
+}
+
+.nightSunBG {
+}
+
+.dayRainBG {
+}
+
+.nightRainBG {
+}
+
+.daySnowBG {
+}
+
+.nightSnowBG {
+}
+
+.dayCloudBG {
+}
+
+.nightCloudBG {
 }
