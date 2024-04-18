@@ -17,7 +17,7 @@ main {
   font-size: 4rem;
 }
 
-form,
+#comments-form,
 #weather-container {
   display: flex;
   width: 100%;
@@ -26,8 +26,13 @@ form,
   align-items: center;
 }
 
+#temperature {
+  margin-top: 0px;
+  height: 1vh;
+}
+
 #weather-icon > img {
-  max-height: 200px;
+  max-height: 20vh;
 }
 
 #weather-description {
@@ -37,7 +42,7 @@ form,
 #comment-section {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
+  /* justify-content: center;
   /* text-align: center; */
   font-size: 0.5rem;
   /* background-color: blue; */
@@ -45,8 +50,13 @@ form,
   border-radius: 10px;
   padding: 50px;
   width: 40vw;
+
+  max-height: 30vh;
+  overflow: auto;
+=======
   height: 20vh;
   overflow: scroll;
+
   border: 1px solid black;
 }
 
@@ -54,6 +64,22 @@ footer {
   display: flex;
   justify-content: center;
 }
-/* #form-location {
+
+#comments-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#form-location {
   visibility: hidden;
-} */
+}
+
+#comment {
+  width: 40vw;
+}
+
+#comment-submit {
+  z-index: 1;
+}
