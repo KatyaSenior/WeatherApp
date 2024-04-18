@@ -9,6 +9,31 @@ const formLocation = document.getElementById("form-location");
 const commentButton = document.getElementById("comment-submit");
 const commentBox = document.getElementById("comment-section");
 
+const form = document.getElementById("comments-form");
+
+async function commentsHandler(event) {
+  event.preventDefault();
+  const username = event.target.username.value;
+  const location = event.target.location.value;
+  const comment = event.target.comment.value;
+  const response = await fetch("http://localhost:8080/comments", {
+    method: "POST",
+    body: JSON.stringify({
+      username: username,
+      location: location,
+      message: comment,
+    }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  console.log(await response.json());
+  form.reset();
+  // you can put a redirect here to your home page (location something something)
+}
+
+form.addEventListener("submit", commentsHandler);
+
 async function fetchComments() {
   const response = await fetch("http://localhost:8080/comments");
   const comments = await response.json();
@@ -71,6 +96,7 @@ async function tempAtLocation(position) {
 async function changeIcon(position) {
   console.log("changeIcon", position);
   const icon = document.getElementById("weather-icon");
+  const weathermsg = document.getElementById("weather-description");
   const latitude = position.coords.latitude;
   const longitude = position.coords.longitude;
   const response = await fetch(
@@ -81,17 +107,20 @@ async function changeIcon(position) {
   let newUrl = "https://cdn-icons-png.flaticon.com/128/2698/2698194.png";
   if (weatherStatus.current.is_day) {
     icon.src = newUrl;
+    weathermsg.textContent = "sunny day";
   } else if (weatherStatus.current.rain) {
     newUrl = "https://cdn-icons-png.flaticon.com/128/4088/4088981.png";
     icon.src = newUrl;
+    weathermsg.textContent = "stay dry!";
   } else if (weatherStatus.current.snowfall) {
     newUrl = "https://cdn-icons-png.flaticon.com/128/6363/6363108.png";
     icon.src = newUrl;
+    weathermsg.textContent = "wow, it's snowing!";
   } else {
     newUrl = "https://cdn-icons-png.flaticon.com/128/704/704845.png";
     icon.src = newUrl;
+    weathermsg.textContent = "rain to be expected.";
   }
 }
 
 userLocationAndTemp();
-

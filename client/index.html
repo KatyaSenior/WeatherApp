@@ -13,14 +13,7 @@
   </head>
   <body>
     <header>
-      <span
-        ><h1 id="location">London</h1>
-        <i style="font-size: 24px" class="fa">&#xf041;</i></span
-      >
-
-      <p id="date-time"></p>
-
-      <!-- When we add more locations, work on this.
+      <span><!-- When we add more locations, work on this.
         <button>Change Location</button>  -->
       <select name="locations" id="locations">
         <option value="select">Select Location</option>
@@ -30,6 +23,12 @@
         <option value="New York">New York</option>
         <option value="Paris">Paris</option>
       </select>
+        <h1 id="location">London</h1>
+        <i style="font-size: 24px" class="fa">&#xf041;</i></span>
+
+      <p id="date-time"></p>
+
+      
     </header>
     <!-- Key section below -->
     <main>
@@ -44,13 +43,14 @@
         </span>
         <p id="weather-description">Sunny day</p>
         <section id="comment-section">
-          <span id="user-comments">Past user comments here</span>
+          <span id="user-comments"></span>
         </section>
       </div>
+      
       <!-- <section> -->
       <!-- make display: inline-block -->
 
-      <!-- Possible stretch goal content
+      <!-- stretch goal content
           
           <div id="wind">
           <p>18km/h</p>
@@ -65,6 +65,38 @@
           <p>Humidity</p>
         </div> -->
       <!-- </section> -->
+      <form id="comments-form">
+        <section id="form-section">
+          <label for="username">Your Name:</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Enter a username..."
+            required
+          />
+          <label for="form-location">Location:</label>
+          <input
+            type="text"
+            id="form-location"
+            name="location"
+            placeholder="Enter a location..."
+          />
+          <label for="comment">Comments:</label>
+          <textarea
+            id="comment"
+            name="comment"
+            rows="5"
+            placeholder="Enter a comment..."
+            required
+          ></textarea>
+          <button type="submit" id="comment-submit">Submit</button>
+          
+        </section>
+      </form>
+      <!-- <a href="../">
+        <img src="../assets/homeButton.png" id="home-button"
+      /></a> -->
     </main>
 
     <footer>
