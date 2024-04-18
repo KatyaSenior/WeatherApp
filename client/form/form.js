@@ -3,13 +3,13 @@ const form = document.getElementById("comments-form");
 async function commentsHandler(event) {
   event.preventDefault();
   const username = event.target.username.value;
-  const location = event.target.location.value;
+  const location = event.target.formLocation.value;
   const comment = event.target.comment.value;
   const response = await fetch("http://localhost:8080/comments", {
     method: "POST",
     body: JSON.stringify({
       username: username,
-      location: location,
+      location: form - location,
       message: comment,
     }),
     headers: {
