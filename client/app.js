@@ -31,6 +31,7 @@ async function commentsHandler(event) {
   form.reset();
 }
 async function fetchComments() {
+  console.log("debug");
   const response = await fetch("http://localhost:8080/comments");
   const comments = await response.json();
   console.log(comments);
@@ -89,14 +90,16 @@ fetchComments();
 
 //getting user location and 'reverse geocoding' - see MDN docs
 async function userLocationAndTemp() {
+  console.log("debug");
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showCity);
   } else {
     console.log("Geolocation is not supported!");
   }
-  // showCity(position);
+  //showCity(position);
 
   async function showCity(position) {
+    console.log("debug");
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
     const response = await fetch(
@@ -112,6 +115,7 @@ async function userLocationAndTemp() {
   }
 
   async function tempAtLocation(position) {
+    console.log("debug");
     const temp = document.getElementById("temperature");
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
@@ -124,7 +128,8 @@ async function userLocationAndTemp() {
     console.log(currentTemp);
     temp.textContent = currentTemp + temperatures.current_units.temperature_2m;
   }
-    async function changeIcon(position) {
+  async function changeIcon(position) {
+    console.log("debug");
     const icon = document.getElementById("weather-icon");
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
@@ -135,27 +140,25 @@ async function userLocationAndTemp() {
     console.log(weatherStatus);
     const currentStatus = weatherStatus.current;
     console.log(currentStatus);
-    const newUrl ="https://cdn-icons-png.flaticon.com/128/2698/2698194.png"
+    const newUrl = "https://cdn-icons-png.flaticon.com/128/2698/2698194.png";
     console.log(newUrl);
-    if(weatherStatus.current.is_day){
-      icon.src=newUrl;
+    if (weatherStatus.current.is_day) {
+      icon.src = newUrl;
       console.log(newUrl);
-    
-    }else if(weatherStatus.current.rain){
-    newUrl ="https://cdn-icons-png.flaticon.com/128/4088/4088981.png"
-         icon.src=newUrl;
-         console.log(icon.src);
-  }
-  else if(weatherStatus.current.snowfall){
-    newUrl ="https://cdn-icons-png.flaticon.com/128/6363/6363108.png"
-              icon.src=newUrl;
-  }else {
-    newUrl ="https://cdn-icons-png.flaticon.com/128/704/704845.png";
-    icon.src=newUrl;
-  }
-   
+    } else if (weatherStatus.current.rain) {
+      newUrl = "https://cdn-icons-png.flaticon.com/128/4088/4088981.png";
+      icon.src = newUrl;
+      console.log(icon.src);
+    } else if (weatherStatus.current.snowfall) {
+      newUrl = "https://cdn-icons-png.flaticon.com/128/6363/6363108.png";
+      icon.src = newUrl;
+    } else {
+      newUrl = "https://cdn-icons-png.flaticon.com/128/704/704845.png";
+      icon.src = newUrl;
+    }
   }
   changeIcon();
+  console.log("debug");
 
   //function to try and change icon depending on sun/rain/snow
   // async function changeIcon(position) {
