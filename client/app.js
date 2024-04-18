@@ -120,6 +120,35 @@ async function userLocationAndTemp() {
     console.log(currentTemp);
     temp.textContent = currentTemp + temperatures.current_units.temperature_2m;
   }
+  async function changeIcon() {
+    const icon = document.getElementById("weather-icon");
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+    const response = await fetch(
+      `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,is_day,rain,showers,snowfall&hourly=temperature_2m&timezone=auto`
+    );
+    const wetherStatus = await response.json();
+    console.log(wetherStatus);
+    const currentStatus = wetherStatus.current;
+    console.log(currentStatus);
+    const newUrl ="client/assets/sun.png"
+    if(currentStatus.is_day){
+      icon.src=newUrl;
+    
+    }else if(currentStatus.rain){
+    newUrl ="client/assets/cloudy (3).png"
+         icon.src=newUrl;
+  }
+  else if(currentStatus.snowfall){
+    newUrl ="client/assets/cloudy (3).png"
+              icon.src=newUrl;
+  }else {
+    newUrl ="";
+    icon.src=newUrl;
+  }
+   
+  }
+  changeIcon();
 
   //function to try and change icon depending on sun/rain/snow
   // async function changeIcon(position) {
