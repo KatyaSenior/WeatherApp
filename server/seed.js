@@ -12,7 +12,7 @@ message TEXT
 )`
   ).run();
 
-  //sample data
+  //sample data to populate the database
   const locations = [
     {
       username: "team1",

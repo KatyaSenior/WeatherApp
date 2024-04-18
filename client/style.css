@@ -46,7 +46,7 @@ form,
   padding: 50px;
   width: 40vw;
   height: 20vh;
-  overflow: auto;
+  overflow: scroll;
   border: 1px solid black;
 }
 
