@@ -15,14 +15,14 @@ message TEXT NOT NULL
   //sample data to populate the database
   const locations = [
     {
-      username: "team1",
-      location: "London",
-      message: "yay it's raining",
+      username: "bobiscool",
+      location: "Yorkshire",
+      message: "Yay it's raining!",
     },
     {
       username: "hello123",
       location: "London",
-      message: "hello world",
+      message: "I love the rain :)",
     },
   ];
 
