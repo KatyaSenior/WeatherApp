@@ -7,7 +7,7 @@ function displayUserComments() {
 id INTEGER PRIMARY KEY AUTOINCREMENT,
 username TEXT NOT NULL UNIQUE,
 location TEXT NOT NULL,
-message TEXT
+message TEXT NOT NULL
 
 )`
   ).run();
