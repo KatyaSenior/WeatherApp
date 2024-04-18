@@ -20,7 +20,7 @@ async function commentsHandler(event) {
     body: JSON.stringify({
       username: username,
       location: location,
-      comment: comment,
+      message: comment,
     }),
     headers: {
       "Content-Type": "application/json",
