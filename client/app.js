@@ -105,6 +105,7 @@ async function userLocationAndTemp() {
     console.log(`Your city is ${city}.`);
     location.textContent = city;
     tempAtLocation(position);
+    changeIcon(position);
   }
 
   async function tempAtLocation(position) {
@@ -120,30 +121,33 @@ async function userLocationAndTemp() {
     console.log(currentTemp);
     temp.textContent = currentTemp + temperatures.current_units.temperature_2m;
   }
-  async function changeIcon() {
+    async function changeIcon(position) {
     const icon = document.getElementById("weather-icon");
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
     const response = await fetch(
       `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,is_day,rain,showers,snowfall&hourly=temperature_2m&timezone=auto`
     );
-    const wetherStatus = await response.json();
-    console.log(wetherStatus);
-    const currentStatus = wetherStatus.current;
+    const weatherStatus = await response.json();
+    console.log(weatherStatus);
+    const currentStatus = weatherStatus.current;
     console.log(currentStatus);
-    const newUrl ="client/assets/sun.png"
-    if(currentStatus.is_day){
+    const newUrl ="https://cdn-icons-png.flaticon.com/128/2698/2698194.png"
+    console.log(newUrl);
+    if(weatherStatus.current.is_day){
       icon.src=newUrl;
+      console.log(newUrl);
     
-    }else if(currentStatus.rain){
-    newUrl ="client/assets/cloudy (3).png"
+    }else if(weatherStatus.current.rain){
+    newUrl ="https://cdn-icons-png.flaticon.com/128/4088/4088981.png"
          icon.src=newUrl;
+         console.log(icon.src);
   }
-  else if(currentStatus.snowfall){
-    newUrl ="client/assets/cloudy (3).png"
+  else if(weatherStatus.current.snowfall){
+    newUrl ="https://cdn-icons-png.flaticon.com/128/6363/6363108.png"
               icon.src=newUrl;
   }else {
-    newUrl ="";
+    newUrl ="https://cdn-icons-png.flaticon.com/128/704/704845.png";
     icon.src=newUrl;
   }
    
