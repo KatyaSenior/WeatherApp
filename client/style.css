@@ -3,6 +3,7 @@ body {
   font-family: monospace;
   color: beige;
   background-image: url("https://wallpapers.com/images/hd/gradient-cloudy-weather-kurer753lm2fflzn.jpg");
+  -webkit-text-stroke: 1px black;
 }
 
 header {
