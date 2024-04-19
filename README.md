@@ -66,3 +66,21 @@ Deliverables:
 3. A low-fidelity wireframe of the application's layout, ideally created with a tool like Figma or Excalidraw. Semi-acheived. Mobile wireframe in Figma. Desktop site exists but no wireframe.
    A seed.js file with SQL commands to set up and seed the database for initial development and testing. ACHEIVED.
    A brief presentation or document explaining the architecture of your application, the technologies used, and any challenges you faced. Presentation will be given.
+
+Major Bugs:
+
+1. Bug: Comments not appending.
+   Status: Resolved.
+   Resolved by: Sarah.
+
+2. Bug: Website not deploying on Render.
+   Status: Resolved.
+   Resolved by: Katya.
+
+3. Bug: Render Server and Client not communicating.
+   Status: Resolved.
+   Resolved by: Katya, with advice from Tim.
+
+4. Bug: Manual refresh required for comments to append.
+   Status: Unresolved.
+   MVP breaking: No. However, user story not acheived due to bug.
