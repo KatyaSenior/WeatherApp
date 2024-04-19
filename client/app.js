@@ -9,31 +9,6 @@ const formLocation = document.getElementById("form-location");
 const commentButton = document.getElementById("comment-submit");
 const commentBox = document.getElementById("comment-section");
 
-const form = document.getElementById("comments-form");
-
-async function commentsHandler(event) {
-  event.preventDefault();
-  const username = event.target.username.value;
-  const location = event.target.location.value;
-  const comment = event.target.comment.value;
-  const response = await fetch("http://localhost:8080/comments", {
-    method: "POST",
-    body: JSON.stringify({
-      username: username,
-      location: location,
-      message: comment,
-    }),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  console.log(await response.json());
-  form.reset();
-  // you can put a redirect here to your home page (location something something)
-}
-
-form.addEventListener("submit", commentsHandler);
-
 async function fetchComments() {
   const response = await fetch("http://localhost:8080/comments");
   const comments = await response.json();
@@ -96,7 +71,8 @@ async function tempAtLocation(position) {
 async function changeIcon(position) {
   console.log("changeIcon", position);
   const icon = document.getElementById("weather-icon");
-  const weathermsg = document.getElementById("weather-description");
+  const weathermsg =document.getElementById("weather-description");
+  const backgroundImg = document.getElementById("body");
   const latitude = position.coords.latitude;
   const longitude = position.coords.longitude;
   const response = await fetch(
@@ -107,20 +83,41 @@ async function changeIcon(position) {
   let newUrl = "https://cdn-icons-png.flaticon.com/128/2698/2698194.png";
   if (weatherStatus.current.is_day) {
     icon.src = newUrl;
-    weathermsg.textContent = "sunny day";
+    weathermsg.textContent="sunny day";
+    backgroundImg.style.backgroundImage = "url('https://media.istockphoto.com/id/1033581442/photo/paddy-field-farming-at-sunrise.jpg?s=612x612&w=0&k=20&c=UY9tsQVdUHVcTWcu9URqzj50lzzQkBm7fP9OvnTp7tg=')";
+    backgroundImg.style.backgroundRepeat = "no-repeat";
+    backgroundImg.style.backgroundSize = "cover";
+
+
   } else if (weatherStatus.current.rain) {
     newUrl = "https://cdn-icons-png.flaticon.com/128/4088/4088981.png";
     icon.src = newUrl;
-    weathermsg.textContent = "stay dry!";
+    weathermsg.textContent="stay dry !";
+    backgroundImg.style.backgroundImage = "url('https://th.bing.com/th/id/OIP.1w4QmHCkSLLZDTE6zOXBCAHaEn?rs=1&pid=ImgDetMain')";
+    backgroundImg.style.backgroundRepeat = "no-repeat";
+    backgroundImg.style.backgroundSize = "cover";
+
+
   } else if (weatherStatus.current.snowfall) {
     newUrl = "https://cdn-icons-png.flaticon.com/128/6363/6363108.png";
     icon.src = newUrl;
-    weathermsg.textContent = "wow, it's snowing!";
+    weathermsg.textContent="wow, it's snowing";
+    backgroundImg.style.backgroundImage = "url('https://th.bing.com/th/id/OIP.g4IeHIzXXRlSId8B16hCGQHaEK?rs=1&pid=ImgDetMain')";
+    backgroundImg.style.backgroundRepeat = "no-repeat";
+    backgroundImg.style.backgroundSize = "cover";
+
+
   } else {
     newUrl = "https://cdn-icons-png.flaticon.com/128/704/704845.png";
     icon.src = newUrl;
-    weathermsg.textContent = "rain to be expected.";
+    weathermsg.textContent="rain to be expected";
+    backgroundImg.style.backgroundImage = "url('https://th.bing.com/th/id/OIP.sf8-4TawDNvCKk9r1REVaAHaE8?rs=1&pid=ImgDetMain')";
+    backgroundImg.style.backgroundRepeat = "no-repeat";
+    backgroundImg.style.backgroundSize = "cover";
+
+
   }
 }
 
 userLocationAndTemp();
+
