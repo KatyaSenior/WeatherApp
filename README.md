@@ -11,6 +11,8 @@ geolocation api - https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_A
 
 reverse geocoding api - https://geocode.maps.co/
 
+Lighthouse score: 100
+
 //
 
 PRESENTATION:
